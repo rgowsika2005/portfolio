@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gowsika R - Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+}
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Home Section */
+#home {
+    background: linear-gradient(135deg, #ff4d6d, #ff80a1);
+    color: white;
+}
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.social-icons a {
+    color: black;
+    font-size: 2rem;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+/* Skills Section */
+#skills {
+    background: #fff0f3;
+}
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.skill {
+    background: dark blue;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 150px;
+    transition: transform 0.3s;
+}
+.skill:hover {
+    transform: translateY(-10px);
+}
+.skill i {
+    font-size: 3rem;
+    color: #ff4d6d;
+    margin-bottom: 10px;
+}
+/* Projects Section */
+#projects {
+    background: #f4f4f4;
+}
+.project {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.project img {
+    width: 100%;
+    border-radius: 8px;
+}
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #ff80a1, #ff4d6d);
+    color: white;
+}
+.contact-info {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- Home Page -->
+<section id="home">
+    <img src="https://drive.google.com/file/d/1Fwg4sluCI0GEH2-p__r1gWCrlw3z5hL_/view?usp=sharing" alt="Gowsika R" class="profile-img">
+    <h1>Gowsika R</h1>
+    <p>Pre-final year student | CSE</p>
+    <div class="social-icons">
+        <a href="https://github.com/rgowsika2005" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:rgowsika2005@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/gowsika-r-788b77290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+</section>
+
+<!-- Skills Page -->
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skill-list">
+        <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill"><i class="fas fa-code"></i><p>C</p></div>
+        <div class="skill"><i class="fab fa-python"></i><p>Python</p></div>
+    </div>
+</section>
+
+<!-- Projects Page -->
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="skill-list">
+        <div class="project">
+            <img src="https://via.placeholder.com/250x150" alt="Project 1">
+            <p>Project Title 1</p>
+        </div>
+        <div class="project">
+            <img src="https://via.placeholder.com/250x150" alt="Project 2">
+            <p>Project Title 2</p>
+        </div>
+        <div class="project">
+            <img src="https://via.placeholder.com/250x150" alt="Project 3">
+            <p>Project Title 3</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Page -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p class="contact-info">📞 7395880752</p>
+    <p class="contact-info">📧 rgowsika2005@gmail.com</p>
+    <p class="contact-info">📍 Kumarapalayam, Namakkal</p>
+</section>
+
+<script>
+// Scroll animation trigger
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, { threshold: 0.3 });
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
+
+</body>
+</html>
